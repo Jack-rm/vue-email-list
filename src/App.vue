@@ -3,8 +3,8 @@
     <img alt="Vue logo" src="./assets/logo.png">
     <h1>My 10 favourite Boolean email address boolean e-mail adress are:</h1>
     <ul>
-      <li>
-        <HelloWorld  v-for="(email,index) in randomEmail" :key="index" :email="email" />
+      <li v-if="randomEmail.length >= 10">
+        <HelloWorld v-for="(email, index) in randomEmail" :key="index" :email="email" />
       </li>
     </ul>
   </div>
@@ -34,7 +34,7 @@ export default {
       }
     },
     */
-   
+
     getEmail(n) {
       for (let i = 0; i < n; i++) {
         axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
